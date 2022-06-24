@@ -54,4 +54,29 @@ public class UserController {
                 );
     }
 
+    @PutMapping
+    public ResponseEntity<ResponseWrapper> updateUser(@RequestBody UserDTO userDTO) {
+        userService.update(userDTO);
+        return ResponseEntity
+                .ok(
+                        new ResponseWrapper(
+                                "user successfully updated",
+                                userDTO,
+                                HttpStatus.OK
+                        )
+                );
+    }
+
+    @DeleteMapping("/{username}")
+    public ResponseEntity<ResponseWrapper> deleteUser(@PathVariable("username") String username) {
+        userService.deleteByUserName(username);
+        return ResponseEntity
+                .ok(
+                        new ResponseWrapper(
+                                "user successfully deleted",
+                                HttpStatus.OK
+                        )
+                );
+    }
+
 }
