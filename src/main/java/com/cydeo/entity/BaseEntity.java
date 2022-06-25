@@ -16,13 +16,13 @@ public class BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    @Column(nullable = false,updatable = false)
+    @Column(nullable = true,updatable = false)
     public LocalDateTime insertDateTime;
-    @Column(nullable = false,updatable = false)
+    @Column(nullable = true,updatable = false)
     public Long insertUserId;
-    @Column(nullable = false)
+    @Column(nullable = true)
     public LocalDateTime lastUpdateDateTime;
-    @Column(nullable = false)
+    @Column(nullable = true)
     public Long lastUpdateUserId;
 
     private Boolean isDeleted=false;

@@ -53,7 +53,7 @@ public class UserController {
                 .status(HttpStatus.CREATED)
                 .body(
                         new ResponseWrapper(
-                                "successfully got user",
+                                "successfully create user",
                                 HttpStatus.CREATED
                         )
                 );
