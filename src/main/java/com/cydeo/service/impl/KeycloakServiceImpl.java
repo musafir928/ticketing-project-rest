@@ -27,7 +27,7 @@ public class KeycloakServiceImpl implements KeycloakService {
     }
 
     @Override
-    public Response createUser(UserDTO userDTO) {
+    public void createUser(UserDTO userDTO) {
         // set password
         CredentialRepresentation credential = new CredentialRepresentation();
         credential.setType(CredentialRepresentation.PASSWORD);
@@ -64,7 +64,6 @@ public class KeycloakServiceImpl implements KeycloakService {
 
 
         keycloak.close();
-        return result;
     }
 
     @Override
