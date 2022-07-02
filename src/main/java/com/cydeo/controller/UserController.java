@@ -1,6 +1,7 @@
 package com.cydeo.controller;
 
 import com.cydeo.annotation.DefaultExceptionMessage;
+import com.cydeo.annotation.Loggable;
 import com.cydeo.dto.UserDTO;
 import com.cydeo.entity.ResponseWrapper;
 import com.cydeo.exception.TicketingProjectException;
@@ -27,6 +28,7 @@ public class UserController {
     @GetMapping("/all-users")
     @RolesAllowed("Admin")
     @Operation(summary = "Get user")
+    @Loggable
     public ResponseEntity<ResponseWrapper> getAllUsers() {
         return ResponseEntity
                 .ok(
